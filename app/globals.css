@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --eventpal-teal: #00d0b0;
+  --eventpal-navy: #06062a;
+  --eventpal-deep-navy: #030315;
+  --eventpal-black: #000000;
+  --eventpal-white: #ffffff;
+  --celebration-pink: #ffb3f6;
+  --electric-blue: #00a8ff;
+  --bright-yellow: #ffeb00;
+  --warm-orange: #ff9f2f;
+  --celebration-orange: #ff6a00;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-teal: var(--eventpal-teal);
+  --color-navy: var(--eventpal-navy);
+  --color-deep-navy: var(--eventpal-deep-navy);
+  --color-black: var(--eventpal-black);
+  --color-white: var(--eventpal-white);
+  --font-geist: var(--font-geist);
+  --font-poppins: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+body {
+  font-family: var(--font-poppins), sans-serif;
+  background-color: var(--eventpal-deep-navy);
+  color: var(--eventpal-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-geist);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.25rem;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, #00d0b0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-padding {
+  @apply py-24 px-8 md:px-16 lg:px-24;
+}
+
+.container-xl {
+  @apply max-w-[1500px] mx-auto;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(5deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 15s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--eventpal-deep-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--eventpal-teal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00b096;
 }
