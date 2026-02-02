@@ -1,64 +1,133 @@
 'use client';
-import { ArrowUpRight, Zap, Mail, Rocket } from 'lucide-react';
+// ... imports
+import { Mail, User, Rocket, Sparkles, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
 export default function CTASection() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, waitlistType: 'Event Planner Waitlist' }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        setName('');
+        setEmail('');
+      } else {
+        setError(data.error || 'Something went wrong');
+      }
+    } catch {
+      setError('Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <section className="section-padding relative overflow-hidden px-6 md:px-12 lg:px-20">
-      <div className="container-xl relative z-10 w-full">
-        <div className="glass-card bg-white/[0.02] border-white/5 py-16 px-10 text-center relative overflow-hidden group shadow-[0_30px_80px_rgba(0,0,0,0.4)] w-full mx-auto">
-          {/* Animated Background Gradients */}
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-teal/15 rounded-full blur-[160px] -translate-y-1/2 translate-x-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-1000" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-celebration-pink/5 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2 opacity-30 group-hover:opacity-50 transition-opacity duration-1000" />
+    <section className="relative w-full overflow-hidden bg-white py-24 flex flex-col items-center justify-center">
 
-          <div className="relative z-10 w-full space-y-16">
-            {/* Upper Content */}
-            <div className="flex flex-col items-center justify-center gap-8 max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass-card border-white/10 text-bright-yellow bg-white/5">
-                <Zap className="w-4 h-4 fill-current" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em]">The Future of Gathering</span>
-              </div>
+      {/* --- BACKGROUND BLOBS (To match About Section) --- */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-[#FFF100] rounded-br-full opacity-50 z-0" />
+      <div className="absolute bottom-0 right-0 w-96 h-40 bg-[#FF9933] rounded-tl-full opacity-50 z-0" />
+      <div className="absolute top-1/2 -right-20 w-40 h-80 bg-[#FF7EEF] rounded-l-full opacity-30 z-0" />
 
-              <h2 className="leading-[1.1] tracking-tighter font-geist text-white text-4xl md:text-7xl uppercase">
-                Ready to Design Your <br />
-                <span className="text-gradient">Next Masterpiece?</span>
+      <div className="container mx-auto relative z-10 px-6">
+        {/* Gradient Wrapper for the border */}
+        <div className="max-w-7xl mx-auto p-[6px] rounded-[64px] bg-gradient-to-r from-[#FFF100] via-[#FF9933] to-[#FF7EEF]">
+
+          {/* Main Card - Height reduced and shadow removed */}
+          <div className="rounded-[60px] bg-white p-10 md:p-16 text-center relative overflow-hidden">
+
+            {/* Heading */}
+            <div className="space-y-4 mb-10">
+              <h2 className="text-5xl md:text-8xl font-black text-black tracking-tighter uppercase leading-none">
+                Plan Events <br />
+                <span className="text-[#00F2E5]">With Confidence</span>
               </h2>
-
-              <p className="text-white/40 text-xl font-poppins leading-relaxed max-w-2xl">
-                Join the new generation of orchestrators who are turning human connection into a shared cultural experience.
+              <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
+                Join the waitlist and be the first to experience a simpler way to plan events.
               </p>
             </div>
 
-            {/* Waitlist Form Section */}
-            <div className="max-w-2xl mx-auto w-full pt-8 border-t border-white/5">
-              <div className="space-y-8">
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-black text-teal uppercase font-geist tracking-tight">Join the Waitlist</h3>
-                  <p className="text-white/30 text-sm font-poppins">Be the first to experience the seamless way to plan events.</p>
-                </div>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <div className="relative flex-1 group">
-                    <Mail className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/20 group-focus-within:text-teal transition-colors" />
-                    <input
-                      type="email"
-                      placeholder="Enter your digital address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-14 pr-6 text-white placeholder:text-white/20 focus:outline-none focus:border-teal/50 transition-all font-poppins"
-                    />
+            {/* Redesigned Form */}
+            <form className="max-w-4xl mx-auto space-y-4" onSubmit={handleSubmit}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Name Input */}
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                    <User className="w-5 h-5 text-black group-focus-within:text-[#FF7EEF]" />
                   </div>
-                  <button className="bg-teal hover:bg-bright-yellow text-deep-navy px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-xs flex items-center justify-center gap-3 transition-all transform hover:scale-105 active:scale-95 shadow-[0_15px_35px_rgba(0,208,176,0.3)] group">
-                    Secure Access <Rocket className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                  </button>
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-white border-4 border-gray-100 rounded-3xl py-5 pl-16 pr-8 text-black font-bold placeholder:text-gray-400 focus:outline-none focus:border-[#FF7EEF] transition-all"
+                    required
+                  />
                 </div>
 
-                <p className="text-[10px] text-white/15 uppercase tracking-widest font-black">
-                  * Limited spots available for the private beta.
-                </p>
+                {/* Email Input */}
+                <div className="relative group">
+                  <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
+                    <Mail className="w-5 h-5 text-black group-focus-within:text-[#00F2E5]" />
+                  </div>
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-white border-4 border-gray-100 rounded-3xl py-5 pl-16 pr-8 text-black font-bold placeholder:text-gray-400 focus:outline-none focus:border-[#00F2E5] transition-all"
+                    required
+                  />
+                </div>
               </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting || isSubmitted}
+                className="w-full bg-[#051B16] text-white py-3 px-6 rounded-full font-medium hover:bg-[#051B16]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? 'Joining...' : isSubmitted ? 'Joined!' : 'Join Waitlist'}
+                {!isSubmitted && <ArrowRight className="w-4 h-4" />}
+              </button>
+
+              {isSubmitted && (
+                <p className="text-teal-600 font-bold text-center mt-4 animate-in fade-in slide-in-from-bottom-2">
+                  You're on the list! We'll be in touch soon.
+                </p>
+              )}
+              {error && (
+                <p className="text-red-500 font-bold text-center mt-4 animate-in fade-in slide-in-from-bottom-2">
+                  {error}
+                </p>
+              )}
+            </form>
+
+            {/* Footer text */}
+            <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+              <span>Event Pal</span>
+              <span className="hidden md:block text-black">•</span>
+              <span>2026 Waitlist</span>
+              <span className="hidden md:block text-black">•</span>
+              <span className="text-[#FF7EEF]">Early Access Coming Soon</span>
             </div>
           </div>
         </div>

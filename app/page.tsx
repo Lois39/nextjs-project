@@ -1,17 +1,15 @@
-import Header from '../components/Header';
 import AboutSection from '../components/AboutSection';
+import BrandPersonality from '../components/BrandPersonality';
 import CTASection from '../components/CTASection';
-import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <main className="overflow-x-hidden bg-deep-navy">
-      <Header />
-      <div className="pt-20"> {/* Offset for floating header */}
+    <main className="">
+      <div className="items-center justify-center flex flex-col w-full">
         <AboutSection />
         <CTASection />
+        <BrandPersonality />
       </div>
-      <Footer />
     </main>
   );
 }
