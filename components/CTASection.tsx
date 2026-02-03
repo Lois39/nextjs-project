@@ -40,24 +40,24 @@ export default function CTASection() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden bg-white py-24 flex flex-col items-center justify-center">
+    <section className="relative w-full overflow-hidden bg-white py-12 md:py-24 flex flex-col items-center justify-center">
 
       {/* --- BACKGROUND BLOBS (To match About Section) --- */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#FFF100] rounded-br-full opacity-50 z-0" />
-      <div className="absolute bottom-0 right-0 w-96 h-40 bg-[#FF9933] rounded-tl-full opacity-50 z-0" />
-      <div className="absolute top-1/2 -right-20 w-40 h-80 bg-[#FF7EEF] rounded-l-full opacity-30 z-0" />
+      <div className="absolute top-0 left-0 w-32 h-32 md:w-64 md:h-64 bg-[#FFF100] rounded-br-full opacity-50 z-0" />
+      <div className="absolute bottom-0 right-0 w-48 h-20 md:w-96 md:h-40 bg-[#FF9933] rounded-tl-full opacity-50 z-0" />
+      <div className="absolute top-1/2 -right-10 md:-right-20 w-20 h-40 md:w-40 md:h-80 bg-[#FF7EEF] rounded-l-full opacity-30 z-0" />
 
       <div className="container mx-auto relative z-10 px-6">
         {/* Gradient Wrapper for the border */}
-        <div className="max-w-7xl mx-auto p-[6px] rounded-[64px] bg-gradient-to-r from-[#FFF100] via-[#FF9933] to-[#FF7EEF]">
+        <div className="max-w-7xl mx-auto p-[6px] rounded-[32px] md:rounded-[64px] bg-gradient-to-r from-[#FFF100] via-[#FF9933] to-[#FF7EEF]">
 
           {/* Main Card - Height reduced and shadow removed */}
-          <div className="rounded-[60px] bg-white p-10 md:p-16 text-center relative overflow-hidden">
+          <div className="rounded-[28px] md:rounded-[60px] bg-white p-6 md:p-16 text-center relative overflow-hidden">
 
             {/* Heading */}
             <div className="space-y-4 mb-10">
-              <h2 className="text-5xl md:text-8xl font-black text-black tracking-tighter uppercase leading-none">
-                Plan Events <br />
+              <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-black tracking-tighter uppercase leading-none">
+                Plan Events <br className="hidden md:block" />
                 <span className="text-[#00F2E5]">With Confidence</span>
               </h2>
               <p className="text-xl text-gray-600 font-medium max-w-2xl mx-auto leading-relaxed">
@@ -78,7 +78,7 @@ export default function CTASection() {
                     placeholder="Full Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full bg-white border-4 border-gray-100 rounded-3xl py-5 pl-16 pr-8 text-black font-bold placeholder:text-gray-400 focus:outline-none focus:border-[#FF7EEF] transition-all"
+                    className="w-full bg-white border-4 border-gray-100 rounded-3xl py-4 md:py-5 pl-14 md:pl-16 pr-6 md:pr-8 text-black font-bold placeholder:text-gray-400 focus:outline-none focus:border-[#FF7EEF] transition-all text-sm md:text-base"
                     required
                   />
                 </div>
@@ -93,7 +93,7 @@ export default function CTASection() {
                     placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white border-4 border-gray-100 rounded-3xl py-5 pl-16 pr-8 text-black font-bold placeholder:text-gray-400 focus:outline-none focus:border-[#00F2E5] transition-all"
+                    className="w-full bg-white border-4 border-gray-100 rounded-3xl py-4 md:py-5 pl-14 md:pl-16 pr-6 md:pr-8 text-black font-bold placeholder:text-gray-400 focus:outline-none focus:border-[#00F2E5] transition-all text-sm md:text-base"
                     required
                   />
                 </div>
