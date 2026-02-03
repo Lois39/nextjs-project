@@ -103,7 +103,7 @@ export default function CTASection() {
               <button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
-                className="w-full bg-[#051B16] text-white py-3 px-6 rounded-full font-medium hover:bg-[#051B16]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-[#051B16] text-white py-3 px-6 rounded-[10px] font-medium hover:bg-[#051B16]/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? 'Joining...' : isSubmitted ? 'Joined!' : 'Join Waitlist'}
                 {!isSubmitted && <ArrowRight className="w-4 h-4" />}
