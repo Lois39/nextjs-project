@@ -1,14 +1,12 @@
 import AboutSection from '../components/AboutSection';
-import BrandPersonality from '../components/BrandPersonality';
 import CTASection from '../components/CTASection';
 
 export default function Home() {
   return (
-    <main className="">
-      <div className="items-center justify-center flex flex-col w-full">
-        <AboutSection />
+    <main className="bg-white min-h-screen">
+      <div className="flex flex-col w-full">
         <CTASection />
-        <BrandPersonality />
+        <AboutSection />
       </div>
     </main>
   );
