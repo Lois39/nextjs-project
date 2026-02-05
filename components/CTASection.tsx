@@ -44,9 +44,8 @@ export default function CTASection() {
 
       <div className="container mx-auto relative z-10 px-6">
 
-        {/* --- LOGO --- */}
         <div className="flex justify-center mb-6">
-          <div className="relative w-40 h-12 md:w-56 md:h-16">
+          <div className="relative w-32 h-10 md:w-44 md:h-14">
             <Image
               src="/brand/ev(black green).png"
               alt="Event Pal Logo"
@@ -58,20 +57,21 @@ export default function CTASection() {
           </div>
         </div>
 
-        {/* Gradient Wrapper for the border */}
-        <div className="max-w-4xl mx-auto p-[3px] rounded-[32px] md:rounded-[48px] bg-gradient-to-r from-[#FFF100] via-[#FF9933] to-[#FF7EEF]">
+        {/* --- MAIN CONTENT --- */}
+        <div className="max-w-4xl mx-auto">
 
           {/* Main Card */}
           <div className="rounded-[29px] md:rounded-[45px] bg-white p-6 md:p-10 text-center relative overflow-hidden">
 
             {/* Heading */}
             <div className="space-y-2 mb-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-black tracking-tighter uppercase leading-none">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-black tracking-tight uppercase leading-none">
                 Plan Events <br className="hidden md:block" />
-                <span className="text-[#00D0B0]">With Confidence</span>
+                <span className="text-[#05CCAD]">With Confidence</span>
               </h1>
-              <p className="text-base md:text-lg text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
-                Join the waitlist and be the first to experience a simpler way to plan events.
+              <p className="text-sm md:text-base text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
+                Join the waitlist to plan, organize,<br className="hidden md:block" />
+                and manage events—finally all in one place.
               </p>
             </div>
 
@@ -118,6 +118,12 @@ export default function CTASection() {
                 {isSubmitting ? 'Joining...' : isSubmitted ? 'Joined!' : 'Join Waitlist'}
                 {!isSubmitted && <ArrowRight className="w-5 h-5" />}
               </button>
+
+              <div className="mt-4">
+                <p className="text-xs md:text-sm text-gray-400 font-medium">
+                  Launching soon
+                </p>
+              </div>
 
               {isSubmitted && (
                 <p className="text-teal-600 font-bold text-center mt-4 animate-in fade-in slide-in-from-bottom-2">

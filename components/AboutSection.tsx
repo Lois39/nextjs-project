@@ -16,30 +16,29 @@ export default function AboutSection() {
                         </div>
                         <h3 className="text-xl font-black mb-3 uppercase tracking-tight">About Us</h3>
                         <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">
-                            Event Pal was created to simplify event planning. We bring venues, vendors, budgets, timelines, and communication into one seamless platform.
+                            Event Pal is an all-in-one event planning platform designed to remove the stress, confusion and endless back-and-forth that comes with organizing events. We bring venues, vendors, budgets, timelines, and communication into one <span className="font-bold text-black">simple, seamless experience.</span>
                         </p>
                     </div>
 
                     {/* Our Vision */}
-                    <div className="bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#FF7EEF] hover:scale-[1.02] transition-transform shadow-sm">
-                        <div className="w-12 h-12 bg-[#FF7EEF]/10 rounded-xl flex items-center justify-center mb-5">
-                            <Target className="w-7 h-7 text-[#FF7EEF]" />
+                    <div className="bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#05CCAD] hover:scale-[1.02] transition-transform shadow-sm">
+                        <div className="w-12 h-12 bg-[#05CCAD]/10 rounded-xl flex items-center justify-center mb-5">
+                            <Target className="w-7 h-7 text-[#05CCAD]" />
                         </div>
                         <h3 className="text-xl font-black mb-3 uppercase tracking-tight">Our Vision</h3>
                         <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">
-                            To redefine how the world plans and experiences events by removing complexity and
-                            replacing it with confidence and joy.
+                            We envision a world where planning an event feels exciting instead of overwhelming — where confidence replaces chaos, and anyone can bring their vision to life without friction or guesswork.
                         </p>
                     </div>
 
                     {/* Our Mission */}
-                    <div className="bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#FF9933] hover:scale-[1.02] transition-transform shadow-sm">
-                        <div className="w-12 h-12 bg-[#FF9933]/10 rounded-xl flex items-center justify-center mb-5">
-                            <Rocket className="w-7 h-7 text-[#FF9933]" />
+                    <div className="bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#05CCAD] hover:scale-[1.02] transition-transform shadow-sm">
+                        <div className="w-12 h-12 bg-[#05CCAD]/10 rounded-xl flex items-center justify-center mb-5">
+                            <Rocket className="w-7 h-7 text-[#05CCAD]" />
                         </div>
                         <h3 className="text-xl font-black mb-3 uppercase tracking-tight">Our Mission</h3>
                         <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">
-                            Deliver a seamless, all-in-one platform that connects people with trusted vendors and tools to plan with clarity and ease.
+                            Our mission is to build intuitive tools and trusted connections that help people plan smarter, faster, and with total clarity — all from one powerful, easy-to-use platform.
                         </p>
                     </div>
 
