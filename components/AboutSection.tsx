@@ -10,9 +10,9 @@ export default function AboutSection() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
                     {/* About Us */}
-                    <div className="bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#00F2E5] hover:scale-[1.02] transition-transform shadow-sm">
-                        <div className="w-12 h-12 bg-[#00F2E5]/10 rounded-xl flex items-center justify-center mb-5">
-                            <Lightbulb className="w-7 h-7 text-[#00F2E5]" />
+                    <div className="bg-white p-6 md:p-8 rounded-[32px] border-2 border-[#05CCAD] hover:scale-[1.02] transition-transform shadow-sm">
+                        <div className="w-12 h-12 bg-[#05CCAD]/10 rounded-xl flex items-center justify-center mb-5">
+                            <Lightbulb className="w-7 h-7 text-[#05CCAD]" />
                         </div>
                         <h3 className="text-xl font-black mb-3 uppercase tracking-tight">About Us</h3>
                         <p className="text-gray-500 text-sm md:text-base leading-relaxed font-medium">

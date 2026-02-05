@@ -68,7 +68,7 @@ export default function CTASection() {
             <div className="space-y-2 mb-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-black tracking-tighter uppercase leading-none">
                 Plan Events <br className="hidden md:block" />
-                <span className="text-[#00F2E5]">With Confidence</span>
+                <span className="text-[#05CCAD]">With Confidence</span>
               </h1>
               <p className="text-base md:text-lg text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
                 Join the waitlist and be the first to experience a simpler way to plan events.
@@ -96,14 +96,14 @@ export default function CTASection() {
                 {/* Email Input */}
                 <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-                    <Mail className="w-5 h-5 text-gray-400 group-focus-within:text-[#00F2E5]" />
+                    <Mail className="w-5 h-5 text-gray-400 group-focus-within:text-[#05CCAD]" />
                   </div>
                   <input
                     type="email"
                     placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-3 md:py-4 pl-12 md:pl-14 pr-6 text-black font-semibold placeholder:text-gray-400 focus:outline-none focus:border-[#00F2E5] transition-all text-sm md:text-base"
+                    className="w-full bg-gray-50/50 border-2 border-gray-100 rounded-2xl py-3 md:py-4 pl-12 md:pl-14 pr-6 text-black font-semibold placeholder:text-gray-400 focus:outline-none focus:border-[#05CCAD] transition-all text-sm md:text-base"
                     required
                   />
                 </div>
@@ -130,18 +130,6 @@ export default function CTASection() {
                 </p>
               )}
             </form>
-
-            {/* Footer text */}
-            <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-4 text-[9px] font-black uppercase tracking-[0.2em] text-gray-400">
-              <span className="flex items-center gap-2">
-                <Sparkles className="w-3 h-3 text-[#FFF100]" />
-                Event Pal
-              </span>
-              <span className="hidden md:block opacity-30">|</span>
-              <span>2026 Waitlist</span>
-              <span className="hidden md:block opacity-30">|</span>
-              <span className="text-[#FF7EEF]">Early Access</span>
-            </div>
           </div>
         </div>
       </div>
