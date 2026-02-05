@@ -4,7 +4,7 @@ import Image from 'next/image';
 const images = [
   {
     src: '/gallery/event-1.jpg',
-    color: '#00F2E5',
+    color: '#00D0B0',
   },
   {
     src: '/gallery/event-2.jpg',

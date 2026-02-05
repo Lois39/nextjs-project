@@ -68,7 +68,7 @@ export default function CTASection() {
             <div className="space-y-2 mb-8">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-black tracking-tighter uppercase leading-none">
                 Plan Events <br className="hidden md:block" />
-                <span className="text-[#05CCAD]">With Confidence</span>
+                <span className="text-[#00D0B0]">With Confidence</span>
               </h1>
               <p className="text-base md:text-lg text-gray-500 font-medium max-w-xl mx-auto leading-relaxed">
                 Join the waitlist and be the first to experience a simpler way to plan events.
