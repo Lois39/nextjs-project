@@ -48,7 +48,7 @@ export default function CTASection() {
         <div className="flex justify-center mb-6">
           <div className="relative w-40 h-12 md:w-56 md:h-16">
             <Image
-              src="/brand/Logo-Black.png"
+              src="/brand/ev(black green).png"
               alt="Event Pal Logo"
               fill
               className="object-contain"
